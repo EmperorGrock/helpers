@@ -1,5 +1,4 @@
-package main.extramethods;
-
+package Helpers;
 
 /**
  * A class with multiple static methods for various input types and styles. 

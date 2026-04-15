@@ -1,4 +1,4 @@
-package main.extramethods;
+package Helpers;
 
 /**
  * A class with static methods for terminal manipulation.
