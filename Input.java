@@ -9,7 +9,6 @@ package helpers;
  * @author invisiblekoi
  */
 public class Input{
-
 	/**
 	 * Method to print a message, then get a string of whatever the user typed, between minLength and maxLength inclusive.
 	 * @param message The message to be printed before getting input
@@ -35,6 +34,34 @@ public class Input{
 	public static String getString(String message){
 		Terminal.printlnWithFormat(message + ": ", 7, 4);
 		return System.console().readLine();
+	}
+
+	/**
+	 * Returns user inputted string
+	 * @return string the user inputs
+	 */
+	public static String getString(){
+		return System.console().readLine();
+	}
+
+	/**
+	 * Returns user entered double value. Managed errors to keep asking until valid is entered.
+	 * @return double the user enters
+	 */
+	public static double getDouble(){
+		String input;
+		double newDouble;
+		while(true){
+			try{
+				input = System.console().readLine();
+				newDouble = Double.parseDouble(input);
+				break;
+			}catch(NumberFormatException e){
+				Terminal.printlnWithFormat("Invalid input. Please enter a decimal number. ", 5, 3);
+				continue;
+			}
+		}
+		return newDouble;
 	}
 
 	/**
@@ -85,6 +112,26 @@ public class Input{
 			}
 		}
 		return newDouble;
+	}
+
+	/**
+	 * Method to get user entered integer. Manages errors to keep asking until valid int is entered.
+	 * @return int the user entered.
+	 */
+	public static int getInt(){
+		String input;
+		int newInt;
+		while(true){
+			try{
+				input = System.console().readLine();
+				newInt = Integer.parseInt(input);
+				break;
+			}catch(NumberFormatException e){
+				Terminal.printlnWithFormat("Invalid input. Please enter an integer.", 5, 3);
+				continue;
+			}
+		}
+		return newInt;
 	}
 
 	/**
