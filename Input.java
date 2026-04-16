@@ -19,10 +19,10 @@ public class Input{
 	 */
 	public static String getString(String message, int minLength, int maxLength){
 		Terminal.printlnWithFormat(message + ": ", 7, 4);
-		String input = System.console.readLine();
+		String input = System.console().readLine();
 		while(input.length() > maxLength || input.length() < minLength){
 			Terminal.printlnWithFormat("Input must be between " + minLength + " and " + maxLength + " Characters: ", 5, 3);
-			input = System.console.readLine();
+			input = System.console().readLine();
 		}
 		return input;
 	}
@@ -66,10 +66,10 @@ public class Input{
 	 * @param max The maximum acceptable value (inclusive)
 	 * @return The double that the user entered
 	 */
-	public static int getDouble(String message, double min, double max){
+	public static double getDouble(String message, double min, double max){
 		Terminal.printWithFormat(message + ": ", 2, 0);
 		String input;
-		int newDouble;
+		double newDouble;
 		while(true){
 			try{
 				input = System.console().readLine();
