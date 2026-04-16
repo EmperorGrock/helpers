@@ -1,4 +1,4 @@
-package Helpers;
+package helpers;
 
 /**
  * A class with multiple static methods for various input types and styles. 

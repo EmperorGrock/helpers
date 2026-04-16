@@ -1,4 +1,4 @@
-package Helpers;
+package helpers;
 
 /**
  * A class with static methods for terminal manipulation.
