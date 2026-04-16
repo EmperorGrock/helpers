@@ -11,11 +11,38 @@ package helpers;
 public class Input{
 
 	/**
+	 * Method to print a message, then get a string of whatever the user typed, between minLength and maxLength inclusive.
+	 * @param message The message to be printed before getting input
+	 * @param minLength The minimum length of the user input, inclusive
+	 * @param maxLength The maximum length of the user input, inclusive
+	 * @return the string of whatever the user typed between min and max length
+	 */
+	public static String getString(String message, int minLength, int maxLength){
+		Terminal.printlnWithFormat(message + ": ", 7, 4);
+		String input = System.console.readLine();
+		while(input.length() > maxLength || input.length() < minLength){
+			Terminal.printlnWithFormat("Input must be between " + minLength + " and " + maxLength + " Characters: ", 5, 3);
+			input = System.console.readLine();
+		}
+		return input;
+	}
+
+	/**
+	 * Simple method to print a message and return a string of whatever the user typed. 
+	 * @param message The message to be printed before getting input
+	 * @return whatever the user typed
+	 */
+	public static String getString(String message){
+		Terminal.printlnWithFormat(message + ": ", 7, 4);
+		return System.console().readLine();
+	}
+
+	/**
 	 * Print the message, and keep asking for input until a valid double is entered
 	 * @param message The message to print before asking for input
 	 * @return the double that the user entered. 
 	 */
-	public static double getdouble(String message){
+	public static double getDouble(String message){
 		Terminal.printWithFormat(message + ": ", 7, 4);
 		String input;
 		double newDouble;
